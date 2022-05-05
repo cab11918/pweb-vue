@@ -1,25 +1,34 @@
 <template>
-  <el-row :span="24">
-    <TopBar />
-  </el-row>
-  <el-row>
-    <el-col :span="4">
-      <SideBar />
-    </el-col>
-    <el-col :span="16" class="test"> 
 
-    </el-col>
-    <el-col :span="4"
-      ><div class="grid-content bg-purple-light" />
-      侧边栏右</el-col
+    <el-col :span="24">
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+      >
+        <el-menu-item index="1">Processing Center</el-menu-item>
+        <el-sub-menu index="2">
+          <template #title>Workspace</template>
+          <el-menu-item index="2-1">item one</el-menu-item>
+          <el-menu-item index="2-2">item two</el-menu-item>
+          <el-menu-item index="2-3">item three</el-menu-item>
+          <el-sub-menu index="2-4">
+            <template #title>item four</template>
+            <el-menu-item index="2-4-1">item one</el-menu-item>
+            <el-menu-item index="2-4-2">item two</el-menu-item>
+            <el-menu-item index="2-4-3">item three</el-menu-item>
+          </el-sub-menu>
+        </el-sub-menu>
+        <el-menu-item index="3" disabled>Info</el-menu-item>
+        <el-menu-item index="4">Orders</el-menu-item>
+      </el-menu></el-col
     >
-  </el-row>
+
+
 </template>
 
 <script>
-import SideBar from "../components/SideBar.vue";
-import TopBar from "../components/TopBar.vue";
-import './Home.scss'
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -65,10 +74,26 @@ export default {
     //   })
     // },
   },
-  components: {
-    SideBar,
-    TopBar,
-  },
 };
 </script>
 
+<style lang="scss">
+.el-row {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+  background-color: red;
+}
+// .test{
+//     opacity: 0;
+// }
+</style>

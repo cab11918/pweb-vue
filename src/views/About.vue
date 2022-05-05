@@ -1,25 +1,11 @@
 <template>
-  <el-row :span="24">
-    <TopBar />
-  </el-row>
-  <el-row>
-    <el-col :span="4">
-      <SideBar />
-    </el-col>
-    <el-col :span="16" class="test"> 
-
-    </el-col>
-    <el-col :span="4"
-      ><div class="grid-content bg-purple-light" />
-      侧边栏右</el-col
-    >
-  </el-row>
+  <div class="app-container">
+    this is about    
+  </div>
+  <router-view name="Vuex"></router-view>
 </template>
 
 <script>
-import SideBar from "../components/SideBar.vue";
-import TopBar from "../components/TopBar.vue";
-import './Home.scss'
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -65,10 +51,7 @@ export default {
     //   })
     // },
   },
-  components: {
-    SideBar,
-    TopBar,
-  },
 };
 </script>
 
+<style scope></style>
