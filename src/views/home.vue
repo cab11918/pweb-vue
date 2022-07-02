@@ -6,9 +6,7 @@
     <el-col :span="4">
       <SideBar />
     </el-col>
-    <el-col :span="16" class="test"> 
-
-    </el-col>
+    <el-col :span="16" class="test"> </el-col>
     <el-col :span="4"
       ><div class="grid-content bg-purple-light" />
       侧边栏右</el-col
@@ -19,7 +17,7 @@
 <script>
 import SideBar from "../components/SideBar.vue";
 import TopBar from "../components/TopBar.vue";
-import './Home.scss'
+import "./Home.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -71,4 +69,3 @@ export default {
   },
 };
 </script>
-

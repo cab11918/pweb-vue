@@ -22,8 +22,7 @@
       </el-form-item>
     </el-form>
   </div>
-       <router-view name="Vuex"></router-view>
-
+  <router-view name="Vuex"></router-view>
 </template>
 
 <script>
@@ -33,7 +32,7 @@ export default {
     return {
       integralGrade: {}, //保存数据
       saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
-    }
+    };
   },
   created() {
     if (this.$route.params.id) {
@@ -48,13 +47,11 @@ export default {
     // },
     // saveOrUpdate() {
     //   this.saveBtnDisabled = true
-
     //   if (this.$route.params.id) {
     //     this.updateData()
     //   } else {
     //     this.saveData()
     //   }
-
     //   this.$router.push('/core/integral-grade/list')
     // },
     // saveData() {
@@ -74,7 +71,7 @@ export default {
     //   })
     // },
   },
-}
+};
 </script>
 
 <style scope></style>

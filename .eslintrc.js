@@ -1,18 +1,21 @@
-// .eslintrc.js 
+// .eslintrc.js
 export default {
-  "extends": "airbnb",
-  "rules": {
-    "semi": [2, "never"],
+  extends: "airbnb",
+  rules: {
+    semi: [2, "never"],
     "no-console": 0,
     "comma-dangle": [2, "always-multiline"],
     "max-len": 0,
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-filename-extension": 0,
     "space-before-function-paren": [2, "always"],
-    "no-unused-expressions": [0, {
-      "allowShortCircuit": true,
-      "allowTernary": true
-    }],
+    "no-unused-expressions": [
+      0,
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+      },
+    ],
     "arrow-body-style": [0, "never"],
     "func-names": 0,
     "prefer-const": 0,
@@ -22,7 +25,7 @@ export default {
     "no-eval": 0,
     "no-continue": 0,
     "react/jsx-no-bind": 0,
-    "no-unused-vars": [2, { "ignoreRestSiblings": true }],
+    "no-unused-vars": [2, { ignoreRestSiblings: true }],
     "no-underscore-dangle": 0,
     "global-require": 0,
     "import/no-unresolved": 0,
@@ -38,16 +41,16 @@ export default {
     "react/no-danger": 0,
     "jsx-a11y/no-static-element-interactions": 0,
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
+  parser: "babel-eslint",
+  parserOptions: {
+    sourceType: "module",
+    ecmaVersion: 8,
+    ecmaFeatures: {
+      jsx: true,
+      experimentalObjectRestSpread: true,
+    },
   },
-  "settings": {
-    "import/resolver": "node"
-    }
+  settings: {
+    "import/resolver": "node",
+  },
 };

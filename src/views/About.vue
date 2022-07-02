@@ -1,7 +1,5 @@
 <template>
-  <div class="app-container">
-    this is about    
-  </div>
+  <div class="app-container">this is about</div>
   <router-view name="Vuex"></router-view>
 </template>
 
