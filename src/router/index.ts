@@ -7,6 +7,7 @@ import {
 import Home from "../views/Home.vue";
 import Vuex from "../views/Vuex.vue";
 import About from "../views/About.vue";
+import Work from "../views/Work.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -28,6 +29,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/about",
     name: "About",
     component: About,
+  },
+  {
+    path: "/work",
+    name: "Work",
+    component: Work,
   },
 ];
 

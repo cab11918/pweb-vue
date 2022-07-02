@@ -1,31 +1,63 @@
 <template>
-  <el-col :span="24">
-    <el-menu
-      :default-active="activeIndex"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-    >
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-        <el-sub-menu index="2-4">
-          <template #title>item four</template>
-          <el-menu-item index="2-4-1">item one</el-menu-item>
-          <el-menu-item index="2-4-2">item two</el-menu-item>
-          <el-menu-item index="2-4-3">item three</el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="3" disabled>Info</el-menu-item>
-      <el-menu-item index="4">Orders</el-menu-item>
-    </el-menu></el-col
-  >
+  <a-menu v-model:selectedKeys="current" mode="horizontal" class="menu">
+    <a-menu-item key="mail">
+      <router-link :to="'/'">
+        <img
+          src="../assets/mepo.svg"
+          class="cus-logo"
+          oncontextmenu="return false;"
+          ondragstart="return false;"
+        />
+        Minghao Yu
+      </router-link>
+    </a-menu-item>
+    <a-menu-item key="work">
+      <router-link :to="'/work'">
+        <img
+          src="../assets/potato.svg"
+          class="cus-logo"
+          oncontextmenu="return false;"
+          ondragstart="return false;"
+        />
+
+        Work
+      </router-link>
+    </a-menu-item>
+    <a-menu-item key="about">
+      <router-link :to="'/about'">
+        <img
+          src="../assets/record.svg"
+          class="cus-logo"
+          oncontextmenu="return false;"
+          ondragstart="return false;"
+        />
+        About
+      </router-link>
+    </a-menu-item>
+  </a-menu>
 </template>
 
-<script>
+<script lang="ts">
+import "./TopBar.scss";
+import { defineComponent, ref } from "vue";
+import {
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from "@ant-design/icons-vue";
+// export default defineComponent({
+//   components: {
+//     MailOutlined,
+//     AppstoreOutlined,
+//     SettingOutlined,
+//   },
+//   setup() {
+//     const current = ref<string[]>(['mail']);
+//     return {
+//       current,
+//     };
+//   },
+// });
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -34,10 +66,21 @@ export default {
       saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
     };
   },
+  setup() {
+    const current = ref<string[]>(["mail"]);
+    return {
+      current,
+    };
+  },
   created() {
     if (this.$route.params.id) {
       // this.fetchDataById(this.$route.params.id)
     }
+  },
+  components: {
+    MailOutlined,
+    AppstoreOutlined,
+    SettingOutlined,
   },
   methods: {
     // fetchDataById(id) {
@@ -74,7 +117,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<!-- <style lang="scss">
 .el-row {
   margin-bottom: 20px;
 }
@@ -93,4 +136,4 @@ export default {
 // .test{
 //     opacity: 0;
 // }
-</style>
+</style> -->

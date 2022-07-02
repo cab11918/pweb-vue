@@ -1,9 +1,9 @@
-<template></template>
+<template>
+  <div class="app-container">this is work</div>
+  <router-view name="Vuex"></router-view>
+</template>
 
 <script>
-import SideBar from "../components/SideBar.vue";
-import TopBar from "../components/TopBar.vue";
-// import "./Home.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -49,9 +49,7 @@ export default {
     //   })
     // },
   },
-  components: {
-    SideBar,
-    TopBar,
-  },
 };
 </script>
+
+<style scope></style>
