@@ -1,16 +1,44 @@
-<template></template>
+<template>
+  <div>
+    12341
+  </div>
+  <!-- <div class="anime">
+    <div class="wCen">
+      <div class="blue">
+        <div class="ball">123</div>
+      </div>
+      <div class="green">
+        <div class="ball">234</div>
+      </div>
+    </div>
+  </div> -->
+</template>
 
 <script>
 import SideBar from "../components/SideBar.vue";
 import TopBar from "../components/TopBar.vue";
-// import "./Home.scss";
+// import "./home.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
+// const anime = require('animejs');
+// import anime from "animejs/lib/anime.js";
+
 export default {
   data() {
     return {
       integralGrade: {}, //保存数据
       saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
     };
+  },
+  mounted() {
+    // var myAnimation = anime({
+    //   targets: [".blue", ".green"],
+    //   translateX: "300px",
+    //   rotate: 360,
+    //   borderRadius: 100,
+    //   duration: 2000 * 2,
+    //   // loop: true,
+    //   easing: "linear",
+    // });
   },
   created() {
     if (this.$route.params.id) {

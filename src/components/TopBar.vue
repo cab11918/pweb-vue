@@ -1,40 +1,58 @@
 <template>
-  <a-menu v-model:selectedKeys="current" mode="horizontal" class="menu">
-    <a-menu-item key="mail">
+  <a-row
+    class="row-topbar"
+    ondragstart="return false;"
+    oncontextmenu="return false;"
+  >
+    <a-col :span="5" class="col-me">
       <router-link :to="'/'">
         <img
           src="../assets/mepo.svg"
           class="cus-logo"
           oncontextmenu="return false;"
-          ondragstart="return false;"
         />
         Minghao Yu
       </router-link>
-    </a-menu-item>
-    <a-menu-item key="work">
-      <router-link :to="'/work'">
+    </a-col>
+    <a-col :span="12" class="col-menu">
+      <a-menu v-model:selectedKeys="current" mode="horizontal" class="menu">
+        <a-menu-item key="mail">
+          <!-- <router-link :to="'/'">
         <img
-          src="../assets/potato.svg"
+          src="../assets/mepo.svg"
           class="cus-logo"
           oncontextmenu="return false;"
-          ondragstart="return false;"
         />
+        Minghao Yu
+      </router-link> -->
+        </a-menu-item>
+        <a-menu-item key="work">
+          <router-link :to="'/work'">
+            <img src="../assets/potato.svg" class="cus-logo" />
 
-        Work
-      </router-link>
-    </a-menu-item>
-    <a-menu-item key="about">
-      <router-link :to="'/about'">
-        <img
-          src="../assets/record.svg"
-          class="cus-logo"
-          oncontextmenu="return false;"
-          ondragstart="return false;"
-        />
-        About
-      </router-link>
-    </a-menu-item>
-  </a-menu>
+            Work
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="about">
+          <router-link :to="'/about'">
+            <img
+              src="../assets/record.svg"
+              class="cus-logo"
+              oncontextmenu="return false;"
+            />
+            About
+          </router-link>
+        </a-menu-item>
+      </a-menu></a-col
+    >
+    <a-col :span="7" class="col-extend" align="right">
+      <!-- <a-switch
+        v-model:checked="checked2"
+        checked-children="🌞"
+        un-checked-children="🌛"
+      /> -->
+    </a-col>
+  </a-row>
 </template>
 
 <script lang="ts">

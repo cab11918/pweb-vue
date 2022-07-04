@@ -4,6 +4,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Vuex from "./views/Vuex.vue";
 import TopBar from "./components/TopBar.vue";
+
 </script>
 
 <template>
