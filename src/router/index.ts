@@ -4,7 +4,7 @@ import {
   createWebHistory,
   RouteRecordRaw,
 } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/home.vue";
 import Vuex from "../views/Vuex.vue";
 import About from "../views/About.vue";
 import Work from "../views/Work.vue";

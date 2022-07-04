@@ -1,8 +1,6 @@
 <template>
-  <div>
-    12341
-  </div>
-  <!-- <div class="anime">
+  <div>1234</div>
+  <div class="anime">
     <div class="wCen">
       <div class="blue">
         <div class="ball">123</div>
@@ -11,16 +9,16 @@
         <div class="ball">234</div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script>
-import SideBar from "../components/SideBar.vue";
+// import SideBar from "../components/SideBar.vue";
 import TopBar from "../components/TopBar.vue";
-// import "./home.scss";
+import "./home.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
 // const anime = require('animejs');
-// import anime from "animejs/lib/anime.js";
+import anime from "animejs/lib/anime.js";
 
 export default {
   data() {
@@ -30,15 +28,15 @@ export default {
     };
   },
   mounted() {
-    // var myAnimation = anime({
-    //   targets: [".blue", ".green"],
-    //   translateX: "300px",
-    //   rotate: 360,
-    //   borderRadius: 100,
-    //   duration: 2000 * 2,
-    //   // loop: true,
-    //   easing: "linear",
-    // });
+    var myAnimation = anime({
+      targets: [".blue", ".green"],
+      translateX: "300px",
+      rotate: 360,
+      borderRadius: 100,
+      duration: 2000 * 2,
+      // loop: true,
+      easing: "linear",
+    });
   },
   created() {
     if (this.$route.params.id) {
@@ -78,7 +76,7 @@ export default {
     // },
   },
   components: {
-    SideBar,
+    // SideBar,
     TopBar,
   },
 };
