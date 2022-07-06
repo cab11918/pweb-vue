@@ -1,12 +1,13 @@
 <template>
   <div class="anime">
-    <div v-for="animatedKeyword in animatedKeywords">
+    <div v-for="(animatedKeyword, index) in animatedKeywords">
       <div
         :class="'kw-' + animatedKeyword.index"
         :style="animatedKeyword.style"
-        @mouseover="test"
       >
-        {{ animatedKeyword.content }}
+        <span @mouseenter="pause(index)" @mouseleave="goOn(index)" class="kw">
+          {{ animatedKeyword.content }}</span
+        >
       </div>
     </div>
   </div>
@@ -23,7 +24,7 @@ import { keywords } from "../constants";
 import _ from "lodash";
 
 let animatedKeywords = keywords.map((content, index) => {
-  const mass = _.random(30, 80);
+  const mass = _.random(30, 100);
   return {
     content,
     index: index,
@@ -35,25 +36,30 @@ let animatedKeywords = keywords.map((content, index) => {
     },
   };
 });
+
 export default {
   data() {
     return {
+      animations: [],
       animatedKeywords: animatedKeywords,
       integralGrade: {}, //保存数据
       saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
     };
   },
   mounted() {
-    console.log(animatedKeywords);
+    console.log(this.$data.animations);
+
     animatedKeywords.forEach((kw) =>
-      anime({
-        targets: [".kw-" + kw.index],
-        translateX: [-(kw.mass * kw.content.length), kw.translateX],
-        duration: kw.mass * 200,
-        // loop: true,
-        easing: "linear",
-        loop: true,
-      })
+      this.$data.animations.push(
+        anime({
+          targets: [".kw-" + kw.index],
+          translateX: [-(kw.mass * kw.content.length), kw.translateX],
+          duration: kw.mass * 200,
+          // loop: true,
+          easing: "linear",
+          loop: true,
+        })
+      )
     );
   },
   created() {
@@ -62,8 +68,12 @@ export default {
     }
   },
   methods: {
-    test: function () {
-      alert("bazinga");
+    pause(target) {
+      this.$data.animations[target].pause();
+      this.$data.animations[target].pause();
+    },
+    goOn(target) {
+      this.$data.animations[target].play();
     },
   },
   components: {
