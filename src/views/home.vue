@@ -1,10 +1,12 @@
 <template>
-  <Welcome />
+  <!-- <Welcome /> -->
+  <ProjectTable />
 </template>
 
 <script>
 import TopBar from "../components/TopBar.vue";
 import Welcome from "../components/Welcome.vue";
+import ProjectTable from "../components/ProjectTable/index.vue";
 import "./home.scss";
 
 export default {
@@ -20,6 +22,7 @@ export default {
   components: {
     TopBar,
     Welcome,
+    ProjectTable,
   },
 };
 </script>
