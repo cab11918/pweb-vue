@@ -4,12 +4,17 @@
       <!-- <div
         :class="'kw-' + animatedKeyword.index"
       > -->
+
+      <!-- <div class="outline"> -->
       <Card
         :kw="animatedKeyword"
         :class="'kw-' + animatedKeyword.index"
         @mouseenter="scale(index)"
         @mouseleave="shrink(index)"
+        v-on:click="goTo(animatedKeyword.content, index)"
       />
+      <!-- </div> -->
+
       <!-- {{ animatedKeyword.content }} -->
       <!-- </div> -->
     </div>
@@ -26,6 +31,7 @@ import anime from "animejs/lib/anime.js";
 import { keywords } from "../../constants";
 import _ from "lodash";
 import Card from "./Card.vue";
+import router from "../../router";
 
 let animatedKeywords = keywords.map((content, index) => {
   const mass = _.random(30, 100);
@@ -86,6 +92,28 @@ const ProjectTable = {
         translateY: 0,
       });
     },
+
+    goTo(content, index) {
+      animatedKeywords.forEach((kw) => {
+        kw.index !== index
+          ? anime({
+              targets: [".kw-" + kw.index],
+              opacity: 0,
+              translateY: 100,
+              easing: "linear",
+              duration: 100,
+            })
+          : anime({
+              targets: [".kw-" + index],
+              scale: 2,
+            });
+      });
+
+      setTimeout(() => {
+        router.push("/work");
+      }, 1000);
+    },
+
     // pause(target) {
     //   this.$data.animations[target].pause();
     //   this.$data.animations[target].pause();

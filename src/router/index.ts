@@ -7,7 +7,7 @@ import {
 import Home from "../views/home.vue";
 import Vuex from "../views/Vuex.vue";
 import About from "../views/About.vue";
-import Work from "../views/Work.vue";
+import Work from "../views/work.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
