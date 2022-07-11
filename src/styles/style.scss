@@ -1,0 +1,17 @@
+@import "./card";
+@import "./home";
+@import "./project_table";
+@import "./top_bar";
+@import "./welcome";
+@import "./work";
+
+body,
+html {
+  height: 100%;
+  background: transparent;
+
+  #app {
+    width: 100%;
+    height: 100%;
+  }
+}

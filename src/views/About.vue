@@ -1,9 +1,11 @@
 <template>
-  <div class="app-container">this is about</div>
-  <router-view name="Vuex"></router-view>
+  <AnimatedCarousel />
+  <!-- <div class="app-container">this is about</div> -->
+  <!-- <router-view name="Vuex"></router-view> -->
 </template>
 
 <script>
+import AnimatedCarousel from "../components/AnimatedCarousel/index.vue";
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -48,6 +50,9 @@ export default {
     //     })
     //   })
     // },
+  },
+  components: {
+    AnimatedCarousel,
   },
 };
 </script>

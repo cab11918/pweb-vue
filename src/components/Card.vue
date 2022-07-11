@@ -10,11 +10,10 @@
 <script>
 // import SideBar from "../components/SideBar.vue";
 // import TopBar from "../components/TopBar.vue";
-import "./Card.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
 // const anime = require('animejs');
 // import anime from "animejs/lib/anime.js";
-import { keywords } from "../../constants";
+import { keywords } from "../constants";
 import _ from "lodash";
 
 export default {

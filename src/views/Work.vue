@@ -23,6 +23,44 @@
       cursus mauris lacus, at tincidunt ante sodales vel. Praesent pretium, ante
       vitae tincidunt rhoncus, ligula elit aliquam purus, et pharetra mi dolor
       id leo. Aliquam leo magna, euismod sed nisi eu, tincidunt vehicula sapien.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis
+      erat sem. Maecenas eget fermentum lorem. Pellentesque tempor dui ac lacus
+      luctus viverra. Aenean vulputate dictum leo, vel congue purus. Curabitur
+      dapibus dapibus elit eget eleifend. Class aptent taciti sociosqu ad litora
+      torquent per conubia nostra, per inceptos himenaeos. Sed sed orci sem.
+      Fusce vehicula elementum tortor sed lobortis. Fusce sit amet porttitor mi.
+      Etiam pharetra eu risus convallis interdum. In hac habitasse platea
+      dictumst. Sed pellentesque lacinia bibendum. Quisque faucibus faucibus
+      turpis eu blandit. Nunc quis tortor dapibus urna maximus fringilla a eu
+      ipsum. Quisque et tempus est. Sed porttitor dui id nulla laoreet
+      fermentum. Quisque eu eleifend nisi, eget fermentum orci. Phasellus
+      facilisis lacus dolor, in vestibulum risus rutrum vitae. Etiam ac
+      dignissim ex, sit amet viverra eros. Cras elementum rutrum purus ac
+      hendrerit. Donec at diam velit. Sed ultrices orci eros, vel vestibulum
+      elit sodales nec. Vestibulum eu dictum metus. Etiam velit quam, dapibus id
+      blandit ac, rhoncus id metus. Nam mattis nec ligula eget dictum. Duis
+      cursus mauris lacus, at tincidunt ante sodales vel. Praesent pretium, ante
+      vitae tincidunt rhoncus, ligula elit aliquam purus, et pharetra mi dolor
+      id leo. Aliquam leo magna, euismod sed nisi eu, tincidunt vehicula sapien.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis
+      erat sem. Maecenas eget fermentum lorem. Pellentesque tempor dui ac lacus
+      luctus viverra. Aenean vulputate dictum leo, vel congue purus. Curabitur
+      dapibus dapibus elit eget eleifend. Class aptent taciti sociosqu ad litora
+      torquent per conubia nostra, per inceptos himenaeos. Sed sed orci sem.
+      Fusce vehicula elementum tortor sed lobortis. Fusce sit amet porttitor mi.
+      Etiam pharetra eu risus convallis interdum. In hac habitasse platea
+      dictumst. Sed pellentesque lacinia bibendum. Quisque faucibus faucibus
+      turpis eu blandit. Nunc quis tortor dapibus urna maximus fringilla a eu
+      ipsum. Quisque et tempus est. Sed porttitor dui id nulla laoreet
+      fermentum. Quisque eu eleifend nisi, eget fermentum orci. Phasellus
+      facilisis lacus dolor, in vestibulum risus rutrum vitae. Etiam ac
+      dignissim ex, sit amet viverra eros. Cras elementum rutrum purus ac
+      hendrerit. Donec at diam velit. Sed ultrices orci eros, vel vestibulum
+      elit sodales nec. Vestibulum eu dictum metus. Etiam velit quam, dapibus id
+      blandit ac, rhoncus id metus. Nam mattis nec ligula eget dictum. Duis
+      cursus mauris lacus, at tincidunt ante sodales vel. Praesent pretium, ante
+      vitae tincidunt rhoncus, ligula elit aliquam purus, et pharetra mi dolor
+      id leo. Aliquam leo magna, euismod sed nisi eu, tincidunt vehicula sapien.
     </p>
     <p>
       In hac habitasse platea dictumst. Phasellus rhoncus bibendum erat, ac
@@ -60,8 +98,7 @@
 
 <script>
 import anime from "animejs";
-import Card from "../components/ProjectTable/Card.vue";
-import "./work.scss";
+import Card from "../components/Card.vue";
 // import integralGradeApi from '@/api/core/integral-grade'
 export default {
   data() {
@@ -79,6 +116,7 @@ export default {
     anime({
       targets: [".work-card"],
       translateY: [-200, 0],
+      translateX: [-200, 0],
       scale: [0, 1],
     });
   },

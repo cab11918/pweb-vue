@@ -24,13 +24,12 @@
 <script>
 // import SideBar from "../components/SideBar.vue";
 // import TopBar from "../components/TopBar.vue";
-import "./index.scss";
 // import integralGradeApi from '@/api/core/integral-grade'
 // const anime = require('animejs');
 import anime from "animejs/lib/anime.js";
 import { keywords } from "../../constants";
 import _ from "lodash";
-import Card from "./Card.vue";
+import Card from "../Card.vue";
 import router from "../../router";
 
 let animatedKeywords = keywords.map((content, index) => {
@@ -64,6 +63,8 @@ const ProjectTable = {
         anime({
           targets: [".kw-" + kw.index],
           translateY: [50, 0],
+          translateX: [50, 0],
+
           // duration: kw.mass * 200,
           // // loop: true,
           // easing: "linear",
@@ -83,6 +84,7 @@ const ProjectTable = {
         targets: [".kw-" + index],
         scale: 1.2,
         translateY: 0,
+        translateX: 0,
       });
     },
     shrink(index) {
@@ -90,6 +92,7 @@ const ProjectTable = {
         targets: [".kw-" + index],
         scale: 1,
         translateY: 0,
+        translateX: 0,
       });
     },
 
@@ -111,7 +114,7 @@ const ProjectTable = {
 
       setTimeout(() => {
         router.push("/work");
-      }, 1000);
+      }, 500);
     },
 
     // pause(target) {
