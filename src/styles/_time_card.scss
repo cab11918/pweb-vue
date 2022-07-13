@@ -1,0 +1,44 @@
+.timecard-wrapper {
+  &-left {
+    .cubes {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 20px;
+    margin-right: 50%;
+
+    .thumbnail {
+      width: 45px;
+      height: 45px;
+      margin: 5px;
+    }
+  }
+
+  &-right {
+    .cubes {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+
+    margin-left: 50%;
+
+    .thumbnail {
+      width: 45px;
+      margin: 5px;
+    }
+  }
+}

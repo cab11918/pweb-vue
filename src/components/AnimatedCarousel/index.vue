@@ -1,6 +1,6 @@
 <template>
   <div class="anime">
-    <div v-for="(animatedKeyword, index) in animatedKeywords">
+    <div v-for="(animatedKeyword, index) in animatedKeywords" :key="index">
       <div
         :class="'kw-' + animatedKeyword.index"
         :style="animatedKeyword.style"
@@ -19,10 +19,10 @@
 // import integralGradeApi from '@/api/core/integral-grade'
 // const anime = require('animejs');
 import anime from "animejs/lib/anime.js";
-import { keywords } from "../../constants";
+import { CAROUSEL_KEYWORDS } from "../../constants";
 import _ from "lodash";
 
-let animatedKeywords = keywords.map((content, index) => {
+let animatedKeywords = CAROUSEL_KEYWORDS.map((content, index) => {
   const mass = _.random(30, 100);
   return {
     content,

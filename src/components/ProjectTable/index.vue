@@ -1,17 +1,17 @@
 <template>
   <div class="wrapper">
-    <div v-for="(animatedKeyword, index) in animatedKeywords" class="kw">
+    <div v-for="(project, index) in projects" class="kw" :key="index">
       <!-- <div
         :class="'kw-' + animatedKeyword.index"
       > -->
 
       <!-- <div class="outline"> -->
-      <Card
-        :kw="animatedKeyword"
-        :class="'kw-' + animatedKeyword.index"
+      <IndexCard
+        :kw="{ content: project.title, index: index }"
+        :class="'kw-' + index"
         @mouseenter="scale(index)"
         @mouseleave="shrink(index)"
-        v-on:click="goTo(animatedKeyword.content, index)"
+        v-on:click="goTo(project, index)"
       />
       <!-- </div> -->
 
@@ -27,30 +27,31 @@
 // import integralGradeApi from '@/api/core/integral-grade'
 // const anime = require('animejs');
 import anime from "animejs/lib/anime.js";
-import { keywords } from "../../constants";
+import { PROJECTS } from "../../constants";
 import _ from "lodash";
-import Card from "../Card.vue";
+import IndexCard from "../IndexCard.vue";
 import router from "../../router";
 
-let animatedKeywords = keywords.map((content, index) => {
-  const mass = _.random(30, 100);
-  return {
-    content,
-    index: index,
-    mass: mass,
-    translateX: window.innerWidth + content.length * mass + "px",
-    style: {
-      // fontSize: mass + "px",
-      color: "#fff",
-    },
-  };
-});
+// let animatedKeywords = PROJECTS.map((content, index) => {
+//   const mass = _.random(30, 100);
+//   return {
+//     content,
+//     index: index,
+//     mass: mass,
+//     translateX: window.innerWidth + content.length * mass + "px",
+//     style: {
+//       // fontSize: mass + "px",
+//       color: "#fff",
+//     },
+//   };
+// });
 
 const ProjectTable = {
   data() {
     return {
       animations: [],
-      animatedKeywords: animatedKeywords,
+      projects: PROJECTS,
+      // animatedKeywords: animatedKeywords,
       //   integralGrade: {}, //保存数据
       //   saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
     };
@@ -58,10 +59,10 @@ const ProjectTable = {
   mounted() {
     // console.log(this.$data.animations);
 
-    animatedKeywords.forEach((kw) =>
+    this.projects.forEach((p, index) =>
       this.$data.animations.push(
         anime({
-          targets: [".kw-" + kw.index],
+          targets: [".kw-" + index],
           translateY: [50, 0],
           translateX: [50, 0],
 
@@ -96,24 +97,24 @@ const ProjectTable = {
       });
     },
 
-    goTo(content, index) {
-      animatedKeywords.forEach((kw) => {
-        kw.index !== index
+    goTo(project, index1) {
+      this.projects.forEach((p, index2) => {
+        index1 !== index2
           ? anime({
-              targets: [".kw-" + kw.index],
+              targets: [".kw-" + index2],
               opacity: 0,
               translateY: 100,
               easing: "linear",
               duration: 100,
             })
           : anime({
-              targets: [".kw-" + index],
+              targets: [".kw-" + index1],
               scale: 2,
             });
       });
 
       setTimeout(() => {
-        router.push("/work");
+        router.push("/work/" + project.code);
       }, 500);
     },
 
@@ -128,7 +129,7 @@ const ProjectTable = {
   components: {
     // SideBar,
     // TopBar,
-    Card,
+    IndexCard,
   },
 };
 
