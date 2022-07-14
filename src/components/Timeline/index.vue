@@ -26,7 +26,7 @@ export default {
   mounted() {
     const options = {
       root: null,
-      rootMargin: "15%",
+      rootMargin: "90px 0px 90px 0px",
       thresholds: 1,
     };
     this.projects.forEach((p, index) => {
@@ -37,14 +37,16 @@ export default {
           translateX: index % 2 === 0 ? [-200, 0] : [200, 0],
           opacity: [0, 1],
           scale: [1.2, 1],
+          delay: 300,
           // easing:'linear',
         });
         anime({
           targets: ["#thumbnails-" + index],
-          translateY: [-20, 0],
+          translateX: index % 2 === 0 ? [40, 0] : [-40, 0],
           scale: [0.9, 1],
           opacity: [0, 1],
-
+          duration: 1500,
+          delay: 300,
           // easing:'linear',
         });
       }, options);

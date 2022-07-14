@@ -15,9 +15,9 @@
     margin-right: 50%;
 
     .thumbnail {
-      width: 45px;
-      height: 45px;
+      height: 20px;
       margin: 5px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
   }
 
@@ -37,8 +37,9 @@
     margin-left: 50%;
 
     .thumbnail {
-      width: 45px;
+      height: 20px;
       margin: 5px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
   }
 }
