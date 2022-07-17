@@ -1,8 +1,12 @@
 export const CAROUSEL_KEYWORDS = [
-  "Marble Solitaire",
-  "KDA",
-  "中文",
-  "Hello, World!",
+  "👨 Minghao Yu",
+  "🏫 Northeastern University",
+  "📧 906924612@qq.com",
+  "🏫 The University of Sydney",
+  "💻 Frontend Developer",
+  "✨ React",
+  "🌍 Wuhan, China",
+  "☎️ +86 17386042684",
 ];
 
 import mbso_1 from "./assets/mbso/mbso_1.png";

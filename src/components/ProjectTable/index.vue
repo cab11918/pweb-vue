@@ -114,7 +114,9 @@ const ProjectTable = {
       });
 
       setTimeout(() => {
-        router.push("/work/" + project.code);
+        // router.push("/work/" + project.code);
+        // No need to implement for now
+        router.push("/work");
       }, 500);
     },
 

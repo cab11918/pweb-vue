@@ -21,7 +21,7 @@
 
 <script>
 import IndexCard from "../IndexCard.vue";
-console.log(window.scrollY);
+// console.log(window.scrollY);
 
 export default {
   props: {

@@ -31,12 +31,12 @@ export default {
     };
     this.projects.forEach((p, index) => {
       var io = new IntersectionObserver((entries) => {
-        console.log(entries);
+        // console.log(entries);
         anime({
           targets: ["#index-card-" + index],
           translateX: index % 2 === 0 ? [-200, 0] : [200, 0],
           opacity: [0, 1],
-          scale: [1.2, 1],
+          scale: [2, 1],
           delay: 300,
           // easing:'linear',
         });

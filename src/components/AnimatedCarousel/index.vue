@@ -46,7 +46,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$data.animations);
+    // console.log(this.$data.animations);
 
     animatedKeywords.forEach((kw) =>
       this.$data.animations.push(
