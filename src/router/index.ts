@@ -8,6 +8,7 @@ import Home from "../views/home.vue";
 import Vuex from "../views/Vuex.vue";
 import About from "../views/about.vue";
 import Work from "../views/work.vue";
+import Article from "../views/article.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -34,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/work",
     name: "Work",
     component: Work,
+  },
+  {
+    path: "/article",
+    name: "article",
+    component: Article,
   },
 ];
 

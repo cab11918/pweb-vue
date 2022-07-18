@@ -33,6 +33,16 @@
             Work
           </router-link>
         </a-menu-item>
+        <a-menu-item key="article">
+          <router-link :to="'/article'">
+            <img
+              src="../assets/book.png"
+              class="cus-logo"
+              oncontextmenu="return false;"
+            />
+            Article
+          </router-link>
+        </a-menu-item>
         <a-menu-item key="about">
           <router-link :to="'/about'">
             <img

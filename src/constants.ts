@@ -117,3 +117,9 @@ export const PROJECTS = [
     images: [skts_1, skts_2, skts_3, skts_4, skts_5, skts_6, skts_7, skts_8],
   },
 ];
+
+import blog from "./assets/articles/个人博客网站搭建.md";
+
+export const ARTICLES = [
+  { title: "个人博客网站搭建", date: "March 30, 2022", src: blog },
+];
