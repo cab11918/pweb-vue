@@ -1,6 +1,6 @@
 <template>
   <div class="'image-wrapper">
-    <img src="./" />
+    <img v-bind:src="imgSrc" :style="{ maxWidth: '90%', height: '200px' }" />
   </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
     placement: String,
     project: Object,
     index: Number,
+    imgSrc: String,
   },
   data() {
     return {

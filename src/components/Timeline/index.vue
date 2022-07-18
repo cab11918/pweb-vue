@@ -4,8 +4,9 @@
       <TimeCard
         :placement="index % 2 === 0 ? 'left' : 'right'"
         :project="project"
-        :index="index"
+        :cardIndex="index"
       />
+      <!-- <div class="image-wrapper"><ImageView/></div> -->
     </template>
   </div>
 </template>
@@ -14,6 +15,7 @@
 import { PROJECTS } from "../../constants";
 import MarbleSolitaire from "../../components/ProjectDetail/MarbleSolitaire.vue";
 import TimeCard from "../Timeline/TimeCard.vue";
+import ImageView from "../Timeline/ImageView.vue";
 import anime from "animejs";
 export default {
   data() {
@@ -21,6 +23,7 @@ export default {
       projects: PROJECTS, //保存数据
       saveBtnDisabled: false, //false :按钮可用，true：按钮不可用
       indexes: [],
+      visited: [],
     };
   },
   mounted() {
@@ -31,7 +34,7 @@ export default {
     };
     this.projects.forEach((p, index) => {
       var io = new IntersectionObserver((entries) => {
-        // console.log(entries);
+        console.log(entries);
         anime({
           targets: ["#index-card-" + index],
           translateX: index % 2 === 0 ? [-200, 0] : [200, 0],
@@ -49,6 +52,7 @@ export default {
           delay: 300,
           // easing:'linear',
         });
+        this.visited.push(index);
       }, options);
       io.observe(document.getElementById("index-card-" + index));
       io.observe(document.getElementById("thumbnails-" + index));
@@ -95,6 +99,7 @@ export default {
   components: {
     MarbleSolitaire,
     TimeCard,
+    ImageView,
   },
 };
 </script>

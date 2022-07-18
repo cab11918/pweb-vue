@@ -1,45 +1,28 @@
 .timecard-wrapper {
-  &-left {
-    .cubes {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-    }
+  display: flex;
+  flex-direction: row;
 
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-
-    margin: 20px;
-    margin-right: 50%;
-
-    .thumbnail {
-      height: 20px;
-      margin: 5px;
-      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
+  .left {
+    width: 50%;
   }
 
-  &-right {
-    .cubes {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-    }
+  .right {
+    width: 50%;
+  }
 
+  .cubes {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 20px;
+    flex-direction: row;
+    align-items: flex-end;
+  }
 
-    margin-left: 50%;
+  align-items: flex-start;
 
-    .thumbnail {
-      height: 20px;
-      margin: 5px;
-      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
+  margin: 20px;
+
+  .thumbnail {
+    height: 20px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
 }
